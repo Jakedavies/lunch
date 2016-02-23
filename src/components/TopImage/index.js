@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LoadingOrderAnimation from 'react-loading-order-with-animation';
+import { Link } from 'react-router';
 
 /* utils */
 import { setParallax } from '../../utils/parallax';
@@ -40,7 +41,7 @@ export class TopImage extends Component {
                 <h1 className="title">
                   Lunch Buddy
                 </h1>
-                <button className="start-round btn btn-lg"></button>
+                <Link to="/nominations" className="start-round btn btn-lg">Begin a lunch vote</Link>
               </LoadingOrderAnimation>
               <LoadingOrderAnimation animation="fade-in"
                 move="from-bottom-to-top"

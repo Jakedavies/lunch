@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 /* actions */
-import { Locations } from 'components/Locations';
-import * as actionCreators from 'actions/items';
+import * as actionCreators from 'actions/nominations';
+import { AddNomination } from 'components/AddNomination';
+import { Nominations } from 'components/Nominations';
 
 const metaData = {
   title: 'Straw-Order Nominations',
@@ -21,14 +22,21 @@ const metaData = {
 };
 
 @connect(
+  state => state.nominations,
   dispatch => bindActionCreators(actionCreators, dispatch)
 )
 export class Nomination extends Component {
   constructor(props) {
     super(props);
   }
-
+  getInitialState() {
+    return { value: '' };
+  }
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
   render() {
+    console.log(this.props);
     return (
       <section>
         <DocumentMeta {...metaData} />
@@ -37,18 +45,14 @@ export class Nomination extends Component {
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
               <h1>
-                Redux
+                Nominate somewhere to go for lunch
               </h1>
+              <AddNomination { ...this.props } />
             </div>
           </div>
-
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
-              <h1>We should put a box to enter a nomination here</h1>
-            </div>
-
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
-
+              <Nominations { ...this.props} />
             </div>
           </div>
         </div>
