@@ -6,7 +6,7 @@
   background: url(files/nyc.jpg);
   background-size: 100% auto;
 
-  height: 500px;
+  height: 1000px;
 
   @media (min-width: 768px) and (max-width: 992px) {
     height: 340px;
@@ -20,10 +20,21 @@
     color: #FFF;
     font-size: 60px;
 
-    margin-top: 20%;
+    margin-top: 40%;
   }
 
   p {
     color: #FFF;
+  }
+  .start-round {
+    margin-top: 30px;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    opacity: .8;
+    color: white;
+    width: 40%;
+    background-color: black;
+    font-size: 23;
   }
 }

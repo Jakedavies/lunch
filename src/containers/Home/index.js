@@ -24,8 +24,6 @@ export class Home extends Component {
       <section>
         <DocumentMeta {...metaData} />
         <TopImage />
-        <Tools />
-        <Projects />
       </section>
     );
   }

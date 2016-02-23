@@ -9,9 +9,9 @@ import { Locations } from 'components/Locations';
 import * as actionCreators from 'actions/items';
 
 const metaData = {
-  title: 'Redux test',
-  description: 'Start you project easy and fast with modern tools.',
-  canonical: 'http://example.com/path/to/page',
+  title: 'Straw-Order Nominations',
+  description: 'Nominate somewhere you would like to get lunch from',
+  canonical: '',
   meta: {
     charset: 'utf-8',
     name: {
@@ -21,10 +21,9 @@ const metaData = {
 };
 
 @connect(
-  state => state.locations,
   dispatch => bindActionCreators(actionCreators, dispatch)
 )
-export class List extends Component {
+export class Nomination extends Component {
   constructor(props) {
     super(props);
   }
@@ -45,7 +44,7 @@ export class List extends Component {
 
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
-              <Locations {...this.props} />
+              <h1>We should put a box to enter a nomination here</h1>
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">

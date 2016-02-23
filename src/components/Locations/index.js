@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 /* component styles */
 import { styles } from './styles.scss';
 
-export class Items extends Component {
+export class Locations extends Component {
 
   static propTypes = {
-    items: React.PropTypes.array,
-    delItem: React.PropTypes.func,
+    locations: React.PropTypes.array,
+    delLocation: React.PropTypes.func,
   };
 
   constructor(props) {
@@ -21,20 +21,17 @@ export class Items extends Component {
   };
 
   render() {
-    const { items } = this.props;
+    const { locations } = this.props;
 
     return (
       <div className={styles}>
-        {!items.length && <span>Array is empty</span>}
+        {!locations.length && <span>Array is empty</span>}
         {
-          items.map((item, index) =>
+          locations.map((location, index) =>
             <div className="checkbox" key={index}>
               <label>
-                <input type="checkbox"
-                  defaultChecked={item.done}
-                />
-                  {`${item.name}`}
-                  {`${item.votedBy}`}
+                  {`${location.name}`}
+                  {`${location.votedBy}`}
                 <span className="remove"
                   data-index={index}
                   onClick={this.onDelete}

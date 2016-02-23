@@ -3,12 +3,18 @@ import { Route } from 'react-router';
 
 /* containers */
 import { App } from 'containers/App';
+import { Nomination } from 'containers/Nomination';
+import { Vote } from 'containers/Vote';
+import { Order } from 'containers/Order';
+import { Result } from 'containers/Result';
 import { Home } from 'containers/Home';
-import { List } from 'containers/List';
 
 export default (
   <Route path="/" component={App}>
     <Route path="home" component={Home} />
-    <Route path="list" component={List} />
+    <Route path="nominations" component={Nomination} />
+    <Route path="votes" component={Vote} />
+    <Route path="orders" component={Order} />
+    <Route path="results" component={Result} />
   </Route>
 );

@@ -38,8 +38,9 @@ export class TopImage extends Component {
                 wait={700}
               >
                 <h1 className="title">
-                  Redux Easy Boilerplate
+                  Lunch Buddy
                 </h1>
+                <button className="start-round btn btn-lg"></button>
               </LoadingOrderAnimation>
               <LoadingOrderAnimation animation="fade-in"
                 move="from-bottom-to-top"
@@ -47,9 +48,6 @@ export class TopImage extends Component {
                 speed={700}
                 wait={900}
               >
-                <p>
-                  Start your project easy and fast with modern tools
-                </p>
               </LoadingOrderAnimation>
             </div>
           </div>

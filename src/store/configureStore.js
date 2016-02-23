@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import rootReducer from '../reducers';
@@ -9,10 +9,10 @@ const logger = createLogger({
     process.env.NODE_ENV === `development`, // eslint-disable-line no-unused-vars
 });
 
-const createStoreWithMiddleware = applyMiddleware(
+const createStoreWithMiddleware = compose(applyMiddleware(
   thunkMiddleware,
-  logger
-)(createStore);
+  logger,
+), window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore);
 
 export default function configureStore(initialState) {
   const store = createStoreWithMiddleware(rootReducer, initialState);
